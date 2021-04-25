@@ -10,9 +10,9 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <configurationType implementation="org.bipolar.mocha.execution.MochaConfigurationType"/>
-        <programRunner implementation="org.bipolar.mocha.execution.MochaRunProgramRunner"/>
-        <runConfigurationProducer implementation="org.bipolar.mocha.execution.MochaRunConfigurationProducer"/>
+        <configurationType implementation="org.bipolar.tests.execution.BipolarConfigurationType"/>
+        <programRunner implementation="org.bipolar.tests.execution.MochaRunProgramRunner"/>
+        <runConfigurationProducer implementation="org.bipolar.tests.execution.MochaRunConfigurationProducer"/>
     </extensions>
 
 </idea-plugin>

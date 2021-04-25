@@ -1,19 +1,18 @@
 <idea-plugin>
-    <id>com.github.tihonove.bipolarintellijplugin</id>
-    <name>bipolar-intellij-plugin</name>
+    <id>org.bipolar.intellijplugin</id>
+    <name>Bipolar</name>
     <vendor>tihonove</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>JavaScript</depends>
+    <depends>NodeJS</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.tihonove.bipolarintellijplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.tihonove.bipolarintellijplugin.services.MyProjectService"/>
+        <configurationType implementation="org.bipolar.mocha.execution.MochaConfigurationType"/>
+        <programRunner implementation="org.bipolar.mocha.execution.MochaRunProgramRunner"/>
+        <runConfigurationProducer implementation="org.bipolar.mocha.execution.MochaRunConfigurationProducer"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.tihonove.bipolarintellijplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
